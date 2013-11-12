@@ -1,13 +1,15 @@
 #!/bin/bash
 
 function stash {
-	echo -e "\n - from 'stash'";
+  echo -e "\n - dirty repository";
+	echo -e " - from 'stash'";
 	git archive --format zip --output "$1" `git stash create`
   echo " - create package in path: "$1""
 }
 
 function head {
-	echo -e "\n - from HEAD";
+  echo -e "\n - clear repository"
+	echo " - from HEAD";
 	git archive --format zip --output "$1" HEAD
   echo " - create package in path: "$1""
 }
